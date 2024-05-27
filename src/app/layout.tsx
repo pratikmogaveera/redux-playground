@@ -1,12 +1,15 @@
+import StoreProvider from "@/app/_store/StoreProvider";
 import ThemeProvider from "@/app/_store/ThemeProvider";
 import type { Metadata } from "next";
-import StoreProvider from "@/app/_store/StoreProvider";
+import { Inter } from "next/font/google";
 import "./globals.css";
 
 export const metadata: Metadata = {
     title: "Redux Playground",
     description: "",
 };
+
+const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({
     children,
@@ -15,11 +18,13 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <StoreProvider>
-                <ThemeProvider>
-                    {children}
-                </ThemeProvider>
-            </StoreProvider>
+            <body className={inter.className}>
+                <StoreProvider>
+                    <ThemeProvider>
+                        {children}
+                    </ThemeProvider>
+                </StoreProvider>
+            </body>
         </html>
     );
 }
