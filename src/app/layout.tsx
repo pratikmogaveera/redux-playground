@@ -1,6 +1,6 @@
-import ThemeProvider from "@/components/ThemeProvider";
+import ThemeProvider from "@/app/_store/ThemeProvider";
 import type { Metadata } from "next";
-import StoreProvider from "./_store/StoreProvider";
+import StoreProvider from "@/app/_store/StoreProvider";
 import "./globals.css";
 
 export const metadata: Metadata = {

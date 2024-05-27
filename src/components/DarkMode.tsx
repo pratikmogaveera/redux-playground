@@ -36,9 +36,9 @@ const DarkMode = () => {
                 <DropdownMenuContent>
                     <DropdownMenuLabel>Select Theme</DropdownMenuLabel>
                     <DropdownMenuSeparator />
-                    <DropdownMenuItem onClick={() => changeTheme("dark")}>Dark</DropdownMenuItem>
-                    <DropdownMenuItem onClick={() => changeTheme("light")}>Light</DropdownMenuItem>
-                    <DropdownMenuItem onClick={() => changeTheme("system")}>System</DropdownMenuItem>
+                    <DropdownMenuItem onClick={() => changeTheme("dark")} disabled={theme === "dark"}>Dark</DropdownMenuItem>
+                    <DropdownMenuItem onClick={() => changeTheme("light")} disabled={theme === "light"}>Light</DropdownMenuItem>
+                    <DropdownMenuItem onClick={() => changeTheme("system")} disabled={theme === "system"}>System</DropdownMenuItem>
                 </DropdownMenuContent>
             </DropdownMenu>
 
