@@ -1,7 +1,7 @@
 "use client"
-import { setMessage } from "@/app/_store/message"
+import { setMessage, clearMessage } from "@/app/_store/message"
 import { AppDispatch, useAppSelector } from "@/app/_store/store"
-import { Send } from "lucide-react"
+import { Send, Trash } from "lucide-react"
 import { FormEvent, useState } from "react"
 import { useDispatch } from "react-redux"
 import { Button } from "./ui/button"
@@ -28,9 +28,14 @@ const MessageComp = () => {
             </p>
             <form onSubmit={(e) => handleSubmit(e)} className='flex gap-2 items-center w-full shrink-0'>
                 <Input value={localValue} onChange={(e) => setLocalValue(e.target.value)} placeholder="Input.." className="text-base" />
-                <Button variant={"outline"} size={"icon"} type="submit" className="shrink-0">
-                    <Send size={20} />
-                </Button>
+                <div className="flex gap-2 items-center">
+                    <Button variant={"outline"} size={"icon"} type="submit" disabled={!localValue.length} className="shrink-0">
+                        <Send size={20} />
+                    </Button>
+                    <Button variant={"outline"} size={"icon"} type="button" onClick={() => dispatch(clearMessage())} disabled={!message.length} className="shrink-0 text-red-800 hover:text-red-800">
+                        <Trash size={20} />
+                    </Button>
+                </div>
             </form>
         </div >
     )

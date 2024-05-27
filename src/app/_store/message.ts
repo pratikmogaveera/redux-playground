@@ -11,9 +11,12 @@ const messageSlice = createSlice({
     reducers: {
         setMessage: (state, action: PayloadAction<PayloadType>) => {
             state.value = action.payload.value
+        },
+        clearMessage: (state) => {
+            state.value = ""
         }
     }
 })
 
 export default messageSlice.reducer
-export const { setMessage } = messageSlice.actions
+export const { setMessage, clearMessage } = messageSlice.actions
