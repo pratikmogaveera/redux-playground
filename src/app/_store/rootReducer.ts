@@ -1,18 +1,16 @@
 import { combineReducers } from "@reduxjs/toolkit";
 import { persistReducer } from "redux-persist";
-import storage from "redux-persist/lib/storage";
 import persistConfig from "./persistConfig";
-
-import counterReducer from './counter'
-import messageReducer from './message'
-import todoReducer from './todo'
-import themeReducer from './theme'
+import counterSlice from './counter';
+import messageSlice from './message';
+import themeSlice from './theme';
+import todoSlice from './todo';
 
 const rootReducer = combineReducers({
-    counterSlice: counterReducer,
-    messageSlice: messageReducer,
-    todoSlice: todoReducer,
-    themeSlice: themeReducer
+    counterSlice,
+    messageSlice,
+    todoSlice,
+    themeSlice,
 })
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)

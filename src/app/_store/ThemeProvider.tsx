@@ -10,9 +10,9 @@ const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
     const theme = useAppSelector(state => state.themeSlice.theme)
 
     return (
-        <body className={cn(inter.className, theme)}>
+        <div className={cn(inter.className, theme, 'body')}>
             {children}
-        </body>
+        </div>
     )
 }
 

@@ -1,5 +1,5 @@
 "use client"
-import { setMessage, clearMessage } from "@/app/_store/message"
+import { clearMessage, setMessage } from "@/app/_store/message"
 import { AppDispatch, useAppSelector } from "@/app/_store/store"
 import { Send, Trash } from "lucide-react"
 import { FormEvent, useState } from "react"

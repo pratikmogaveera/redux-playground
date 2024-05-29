@@ -1,11 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { TypedUseSelectorHook, useSelector } from 'react-redux';
-import counterSlice from "./counter";
-import messageSlice from "./message";
-import todoSlice from "./todo";
-import themeSlice from "./theme"
-import persistedReducer from "./rootReducer";
 import { persistStore } from 'redux-persist';
+import persistedReducer from "./rootReducer";
 
 export const store = configureStore({
     reducer: persistedReducer
