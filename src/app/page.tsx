@@ -1,6 +1,7 @@
 import Counter from "@/components/CounterComp";
 import DarkMode from "@/components/DarkMode";
 import Message from "@/components/MessageComp";
+import ModalComp from "@/components/ModalComp";
 import Todo from "@/components/TodoComp";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 
@@ -21,6 +22,7 @@ export default function Home() {
                     <Counter />
                     <Message />
                     <Todo />
+                    <ModalComp />
                 </div>
 
                 <DarkMode />
